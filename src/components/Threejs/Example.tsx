@@ -3,6 +3,7 @@ import { useRouter } from 'next/navigation';
 import { useRef, useState, useMemo } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
+// @ts-ignore
 import * as THREE from 'three';
 import { Line, useCursor, MeshDistortMaterial } from '@react-three/drei';
 
@@ -21,9 +22,14 @@ export const Logo = ({ ...props }) => {
   useCursor(hovered);
   useFrame((state, delta) => {
     const t = state.clock.getElapsedTime();
-    mesh.current.rotation.y = Math.sin(t) * (Math.PI / 8);
-    mesh.current.rotation.x = Math.cos(t) * (Math.PI / 8);
-    mesh.current.rotation.z -= delta / 4;
+    if (mesh.current) {
+      // @ts-ignore
+      mesh.current.rotation.y = Math.sin(t) * (Math.PI / 8);
+      // @ts-ignore
+      mesh.current.rotation.x = Math.cos(t) * (Math.PI / 8);
+      // @ts-ignore
+      mesh.current.rotation.z -= delta / 4;
+    }
   });
 
   return (
@@ -81,14 +87,14 @@ export const Blob = ({ ...props }) => {
   );
 };
 
-export function Duck(props) {
+export function Duck({ ...props }) {
   const { scene } = useGLTF('/duck.glb');
 
   useFrame((state, delta) => (scene.rotation.y += delta));
 
   return <primitive object={scene} {...props} />;
 }
-export function Dog(props) {
+export function Dog({ ...props }) {
   const { scene } = useGLTF('/dog.glb');
 
   return <primitive object={scene} {...props} />;

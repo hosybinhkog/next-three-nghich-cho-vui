@@ -52,6 +52,7 @@ const Page = () => {
       <View className="absolute top-0 flex h-screen w-full flex-col items-center justify-center">
         {/* @ts-ignore */}
         <Blob />
+        {/* @ts-ignore */}
         <Common />
       </View>
     </main>

@@ -55,6 +55,7 @@ export default function Home() {
             <Suspense fallback={null}>
               {/* @ts-ignore */}
               <Logo scale={0.6} position={[0, 0, 0]} />
+              {/* @ts-ignore */}
               <Common />
             </Suspense>
           </View>
@@ -70,6 +71,7 @@ export default function Home() {
             <Suspense fallback={null}>
               {/* @ts-ignore */}
               <Duck route="/blob" scale={2} position={[0, -1.6, 0]} />
+              {/* @ts-ignore */}
               <Common />
             </Suspense>
           </View>

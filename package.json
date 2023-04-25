@@ -26,5 +26,8 @@
     "three-stdlib": "^2.21.8",
     "tunnel-rat": "^0.1.2",
     "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@types/three": "^0.150.2"
   }
 }

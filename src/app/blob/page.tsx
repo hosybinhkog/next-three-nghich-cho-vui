@@ -50,6 +50,7 @@ const Page = () => {
       </div>
       {/* @ts-ignore */}
       <View className="absolute top-0 flex h-screen w-full flex-col items-center justify-center">
+        {/* @ts-ignore */}
         <Blob />
         <Common />
       </View>
